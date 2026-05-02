@@ -8,67 +8,99 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
+:root {
+  --blue-dark:#0f3557;
+  --blue:#2f80ed;
+}
+
 body {
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:linear-gradient(#e4f3ff, white);
   text-align:center;
+  color:#1f2937;
 }
 
+/* HEADER PREMIUM */
 header {
-  background:#0f3557;
+  background:linear-gradient(135deg,#0b2a46,#0f3557);
   color:white;
-  padding:35px 20px 30px;
-  border-radius:0 0 30px 30px;
+  padding:40px 20px 35px;
+  border-radius:0 0 35px 35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
+/* LOGO */
 .logo {
-  width:180px; /* AGRANDI */
-  margin-bottom:15px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  width:200px;
+  margin-bottom:20px;
+  filter: drop-shadow(0 6px 15px rgba(0,0,0,0.4));
 }
 
+/* ADRESSE PREMIUM */
 .address {
-  margin-top:10px;
+  font-size:18px;
+  font-weight:600;
   line-height:1.6;
-  font-size:14px;
+  margin-top:10px;
 }
 
+.address span {
+  display:block;
+  font-size:22px;
+  font-weight:700;
+}
+
+/* BOUTON MAPS */
 .btn {
   display:inline-flex;
   align-items:center;
-  justify-content:center;
   gap:8px;
-  margin-top:18px;
-  padding:12px 18px;
-  background:#2f80ed;
+  margin-top:20px;
+  padding:14px 22px;
+  background:var(--blue);
   color:white;
-  border-radius:15px;
+  border-radius:18px;
   text-decoration:none;
   font-weight:bold;
+  box-shadow:0 6px 18px rgba(47,128,237,0.4);
+  transition:0.2s;
 }
 
+.btn:hover {
+  transform:translateY(-2px);
+}
+
+/* MENU */
 .menu {
-  margin-top:30px;
+  margin-top:35px;
 }
 
 .menu a {
-  display:block;
-  margin:12px auto;
-  padding:16px;
-  width:80%;
-  max-width:320px;
-  background:#2f80ed;
-  color:white;
-  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:15px auto;
+  padding:18px;
+  width:85%;
+  max-width:340px;
+  background:white;
+  color:var(--blue-dark);
+  border-radius:20px;
   text-decoration:none;
   font-weight:bold;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:0.2s;
 }
 
-.menu a i {
-  margin-right:8px;
+.menu a:hover {
+  transform:translateY(-3px);
+}
+
+/* ICONES */
+.menu i {
+  color:var(--blue);
 }
 </style>
 </head>
@@ -77,12 +109,12 @@ header {
 
 <header>
 
-  <!-- LOGO AGRANDI -->
+  <!-- LOGO -->
   <img src="img/logo-swan.png" class="logo" alt="Logo Swan">
 
   <!-- ADRESSE -->
   <div class="address">
-    17 avenue de Belgique<br>
+    <span>17 avenue de Belgique</span>
     06220 Vallauris<br>
     4ème étage – Porte 139
   </div>
@@ -91,11 +123,12 @@ header {
   <a class="btn" target="_blank"
      href="https://www.google.com/maps/search/?api=1&query=17+avenue+de+Belgique+06220+Vallauris">
     <i data-lucide="map-pin"></i>
-    Google Maps
+    Itinéraire Google Maps
   </a>
 
 </header>
 
+<!-- MENU -->
 <div class="menu">
 
   <a href="acces.html">
