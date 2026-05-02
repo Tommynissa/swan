@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swan - Guide d'accueil</title>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
@@ -35,6 +36,7 @@ header {
   box-shadow:0 10px 30px rgba(0,0,0,0.22);
 }
 
+/* LANG */
 .lang-top {
   position:absolute;
   top:15px;
@@ -53,6 +55,7 @@ header {
   font-weight:bold;
 }
 
+/* LOGO */
 .logo {
   width:210px;
   max-width:70%;
@@ -60,6 +63,7 @@ header {
   margin-bottom:22px;
 }
 
+/* ADRESSE */
 .address {
   font-size:18px;
   font-weight:600;
@@ -71,6 +75,7 @@ header {
   font-size:23px;
 }
 
+/* BOUTON */
 .btn {
   display:inline-flex;
   align-items:center;
@@ -88,6 +93,7 @@ header {
   box-shadow:0 6px 18px rgba(47,128,237,0.35);
 }
 
+/* MAIN */
 main {
   max-width:900px;
   margin:30px auto;
@@ -102,6 +108,13 @@ main {
   box-shadow:0 8px 25px rgba(15,53,87,0.12);
 }
 
+/* TEXTE */
+.card p {
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* MENU */
 .menu a {
   display:flex;
   align-items:center;
@@ -123,6 +136,7 @@ main {
   color:var(--blue);
 }
 
+/* LANGUE */
 .en { display:none; }
 
 body.lang-en .fr { display:none; }
@@ -135,6 +149,7 @@ body.lang-fr .en { display:none; }
 <body class="lang-fr">
 
 <header>
+
   <div class="lang-top">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('en')">EN</button>
@@ -154,18 +169,28 @@ body.lang-fr .en { display:none; }
     <span class="fr">Itinéraire Google Maps</span>
     <span class="en">Open in Google Maps</span>
   </a>
+
 </header>
 
 <main>
+
   <section class="card">
     <h2 class="fr">Guide d’accueil</h2>
     <h2 class="en">Welcome guide</h2>
 
-    <p class="fr">Retrouvez ici les informations utiles pour votre arrivée et votre séjour.</p>
-    <p class="en">Find all useful information for your arrival and stay here.</p>
+    <p class="fr">
+      Retrouvez ici les informations<br>
+      utiles pour votre arrivée et votre séjour.
+    </p>
+
+    <p class="en">
+      Find all the information<br>
+      for your arrival and your stay.
+    </p>
   </section>
 
   <div class="menu">
+
     <a href="acces.html">
       <i data-lucide="key"></i>
       <span class="fr">Accès appartement</span>
@@ -176,7 +201,9 @@ body.lang-fr .en { display:none; }
       <i data-lucide="wifi"></i>
       <span>WiFi</span>
     </a>
+
   </div>
+
 </main>
 
 <script>
@@ -184,6 +211,7 @@ function setLang(lang) {
   document.body.className = 'lang-' + lang;
   document.documentElement.lang = lang;
 }
+
 lucide.createIcons();
 </script>
 
