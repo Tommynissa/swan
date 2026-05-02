@@ -3,39 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swan</title>
-
+<title>Swan - Guide d'accueil</title>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
 :root {
   --blue-dark:#0f3557;
   --blue:#2f80ed;
+  --blue-light:#e4f3ff;
+  --white:#ffffff;
+  --text:#1f2937;
+  --soft:#f6fbff;
 }
+
+* { box-sizing:border-box; }
 
 body {
   margin:0;
   font-family:Arial, sans-serif;
-  background:linear-gradient(#e4f3ff, white);
+  background:linear-gradient(#e4f3ff, #ffffff);
+  color:var(--text);
   text-align:center;
-  color:#1f2937;
 }
 
-/* HEADER */
 header {
+  position:relative;
   background:linear-gradient(135deg,#0b2a46,#0f3557);
   color:white;
-  padding:40px 20px 35px;
+  padding:42px 20px 36px;
   border-radius:0 0 35px 35px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  position: relative;
+  box-shadow:0 10px 30px rgba(0,0,0,0.22);
 }
 
-/* LANGUE */
 .lang-top {
   position:absolute;
   top:15px;
   right:15px;
+  display:flex;
+  gap:6px;
 }
 
 .lang-top button {
@@ -44,40 +49,32 @@ header {
   color:white;
   padding:6px 10px;
   border-radius:10px;
-  margin-left:5px;
   cursor:pointer;
   font-weight:bold;
 }
 
-.lang-top button:hover {
-  background:white;
-  color:#0f3557;
-}
-
-/* LOGO */
 .logo {
-  width:200px;
-  margin-bottom:20px;
-  filter: drop-shadow(0 6px 15px rgba(0,0,0,0.4));
+  width:210px;
+  max-width:70%;
+  filter:drop-shadow(0 6px 15px rgba(0,0,0,0.4));
+  margin-bottom:22px;
 }
 
-/* ADRESSE */
 .address {
   font-size:18px;
   font-weight:600;
   line-height:1.6;
 }
 
-.address span {
+.address strong {
   display:block;
-  font-size:22px;
-  font-weight:700;
+  font-size:23px;
 }
 
-/* BOUTON */
 .btn {
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:8px;
   margin-top:20px;
   padding:14px 22px;
@@ -86,12 +83,23 @@ header {
   border-radius:18px;
   text-decoration:none;
   font-weight:bold;
-  box-shadow:0 6px 18px rgba(47,128,237,0.4);
+  border:none;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(47,128,237,0.35);
 }
 
-/* MENU */
-.menu {
-  margin-top:35px;
+main {
+  max-width:900px;
+  margin:30px auto;
+  padding:0 18px 40px;
+}
+
+.card {
+  background:white;
+  border-radius:24px;
+  padding:24px;
+  margin-bottom:22px;
+  box-shadow:0 8px 25px rgba(15,53,87,0.12);
 }
 
 .menu a {
@@ -101,14 +109,14 @@ header {
   gap:10px;
   margin:15px auto;
   padding:18px;
-  width:85%;
-  max-width:340px;
+  width:100%;
+  max-width:360px;
   background:white;
-  color:#0f3557;
+  color:var(--blue-dark);
   border-radius:20px;
   text-decoration:none;
   font-weight:bold;
-  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  box-shadow:0 6px 20px rgba(0,0,0,0.10);
 }
 
 .menu i {
@@ -116,69 +124,66 @@ header {
 }
 
 .en { display:none; }
+
+body.lang-en .fr { display:none; }
+body.lang-en .en { display:inline; }
+body.lang-fr .fr { display:inline; }
+body.lang-fr .en { display:none; }
 </style>
 </head>
 
-<body>
+<body class="lang-fr">
 
 <header>
-
-  <!-- LANG -->
   <div class="lang-top">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('en')">EN</button>
   </div>
 
-  <!-- LOGO -->
-  <img src="img/logo-swan.png" class="logo">
+  <img src="img/logo-swan.png" class="logo" alt="Logo Swan">
 
-  <!-- ADRESSE -->
   <div class="address">
-    <span>17 avenue de Belgique</span>
+    <strong>17 avenue de Belgique</strong>
     06220 Vallauris<br>
     4ème étage – Porte 139
   </div>
 
-  <!-- GOOGLE MAPS -->
   <a class="btn" target="_blank"
      href="https://www.google.com/maps/search/?api=1&query=17+avenue+de+Belgique+06220+Vallauris">
     <i data-lucide="map-pin"></i>
     <span class="fr">Itinéraire Google Maps</span>
     <span class="en">Open in Google Maps</span>
   </a>
-
 </header>
 
-<!-- MENU -->
-<div class="menu">
+<main>
+  <section class="card">
+    <h2 class="fr">Guide d’accueil</h2>
+    <h2 class="en">Welcome guide</h2>
 
-  <a href="acces.html">
-    <i data-lucide="key"></i>
-    <span class="fr">Accès appartement</span>
-    <span class="en">Apartment access</span>
-  </a>
+    <p class="fr">Retrouvez ici les informations utiles pour votre arrivée et votre séjour.</p>
+    <p class="en">Find all useful information for your arrival and stay here.</p>
+  </section>
 
-  <a href="wifi.html">
-    <i data-lucide="wifi"></i>
-    <span class="fr">WiFi</span>
-    <span class="en">WiFi</span>
-  </a>
+  <div class="menu">
+    <a href="acces.html">
+      <i data-lucide="key"></i>
+      <span class="fr">Accès appartement</span>
+      <span class="en">Apartment access</span>
+    </a>
 
-</div>
+    <a href="wifi.html">
+      <i data-lucide="wifi"></i>
+      <span>WiFi</span>
+    </a>
+  </div>
+</main>
 
 <script>
 function setLang(lang) {
-  document.querySelectorAll('.fr').forEach(el => {
-    el.style.display = lang === 'fr' ? 'inline' : 'none';
-  });
-
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = lang === 'en' ? 'inline' : 'none';
-  });
-
+  document.body.className = 'lang-' + lang;
   document.documentElement.lang = lang;
 }
-
 lucide.createIcons();
 </script>
 
