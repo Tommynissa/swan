@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WiFi - Swan</title>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
 body { font-family:Arial; margin:0; background:#e4f3ff; }
 
@@ -13,6 +15,14 @@ header {
   color:white;
   padding:20px;
   text-align:center;
+}
+
+header a {
+  color:white;
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+  gap:6px;
 }
 
 .card {
@@ -43,8 +53,8 @@ button {
 <body>
 
 <header>
-  <h1>WiFi</h1>
-  <a href="index.html" style="color:white;">⬅ Retour</a>
+  <h1><i data-lucide="wifi"></i> WiFi</h1>
+  <a href="index.html"><i data-lucide="arrow-left"></i> Retour</a>
 </header>
 
 <div class="card">
@@ -55,7 +65,9 @@ button {
 <p>Mot de passe</p>
 <div class="value" id="pwd">4jMA1MPEuexKFxvnLn</div>
 
-<button onclick="copy()">Copier le mot de passe</button>
+<button onclick="copy()">
+  <i data-lucide="copy"></i> Copier
+</button>
 
 </div>
 
@@ -64,6 +76,8 @@ function copy(){
   navigator.clipboard.writeText(document.getElementById("pwd").innerText);
   alert("Mot de passe copié !");
 }
+
+lucide.createIcons();
 </script>
 
 </body>
