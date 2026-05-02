@@ -4,32 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accès - Swan</title>
-
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
+:root {
+  --blue-dark:#0f3557;
+  --blue:#2f80ed;
+  --blue-light:#e4f3ff;
+  --white:#ffffff;
+  --text:#1f2937;
+  --soft:#f6fbff;
+}
+
+* { box-sizing:border-box; }
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: linear-gradient(#e4f3ff, white);
-  color: #1f2937;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(#e4f3ff, #ffffff);
+  color:var(--text);
 }
 
-/* HEADER */
 header {
-  background: #0f3557;
-  color: white;
-  padding: 25px;
-  text-align: center;
-  border-radius: 0 0 28px 28px;
-  position: relative;
+  position:relative;
+  background:linear-gradient(135deg,#0b2a46,#0f3557);
+  color:white;
+  padding:35px 20px 28px;
+  text-align:center;
+  border-radius:0 0 32px 32px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.22);
 }
 
-/* LANG */
 .lang-top {
   position:absolute;
   top:15px;
   right:15px;
+  display:flex;
+  gap:6px;
 }
 
 .lang-top button {
@@ -38,103 +49,100 @@ header {
   color:white;
   padding:6px 10px;
   border-radius:10px;
-  margin-left:5px;
   cursor:pointer;
   font-weight:bold;
 }
 
-.lang-top button:hover {
-  background:white;
-  color:#0f3557;
+header h1 {
+  margin-top:20px;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  font-weight: bold;
+.back-link {
+  color:white;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:bold;
 }
 
-/* NAV */
 .nav-acces {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding: 12px;
-  background: #f4f9ff;
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:8px;
+  padding:12px;
+  background:#f4f9ff;
 }
 
 .nav-acces a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  background: white;
-  color: #0f3557;
-  padding: 10px;
-  border-radius: 15px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 13px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  background:white;
+  color:var(--blue-dark);
+  padding:10px 6px;
+  border-radius:15px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:13px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.10);
+  text-align:center;
 }
 
-/* MAIN */
 main {
-  max-width: 900px;
-  margin: 10px auto 25px;
-  padding: 0 18px 40px;
+  max-width:900px;
+  margin:10px auto 25px;
+  padding:0 18px 40px;
 }
 
 .card {
-  background: white;
-  padding: 22px;
-  border-radius: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 25px rgba(15, 53, 87, 0.12);
-  scroll-margin-top: 100px;
+  background:white;
+  padding:22px;
+  border-radius:24px;
+  margin-bottom:24px;
+  box-shadow:0 8px 25px rgba(15,53,87,0.12);
+  scroll-margin-top:100px;
 }
 
 .card h2 {
-  color: #0f3557;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  color:var(--blue-dark);
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
-/* IMAGES */
 img {
-  width: 100%;
-  border-radius: 18px;
-  margin: 15px 0 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+  width:100%;
+  border-radius:18px;
+  margin:15px 0 8px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.14);
 }
 
-/* TEXTE */
 .caption {
-  background: #f6fbff;
-  border-left: 4px solid #2f80ed;
-  padding: 13px 14px;
-  border-radius: 14px;
-  margin: 8px 0 18px;
-  line-height: 1.5;
+  background:var(--soft);
+  border-left:4px solid var(--blue);
+  padding:13px 14px;
+  border-radius:14px;
+  margin:8px 0 18px;
+  line-height:1.5;
 }
 
 .en { display:none; }
+
+body.lang-en .fr { display:none; }
+body.lang-en .en { display:block; }
+body.lang-fr .fr { display:block; }
+body.lang-fr .en { display:none; }
 </style>
 </head>
 
-<body>
+<body class="lang-fr">
 
 <header>
-
-  <!-- LANG -->
   <div class="lang-top">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('en')">EN</button>
@@ -146,15 +154,13 @@ img {
     <span class="en">Apartment access</span>
   </h1>
 
-  <a href="index.html">
+  <a href="index.html" class="back-link">
     <i data-lucide="arrow-left"></i>
     <span class="fr">Retour à l’accueil</span>
-    <span class="en">Back</span>
+    <span class="en">Back to home</span>
   </a>
-
 </header>
 
-<!-- NAV -->
 <div class="nav-acces">
   <a href="#appartement">
     <i data-lucide="home"></i>
@@ -170,14 +176,12 @@ img {
 
   <a href="#parking">
     <i data-lucide="car"></i>
-    <span class="fr">Parking</span>
-    <span class="en">Parking</span>
+    <span>Parking</span>
   </a>
 </div>
 
 <main>
 
-<!-- APPARTEMENT -->
 <section class="card" id="appartement">
   <h2>
     <i data-lucide="home"></i>
@@ -185,34 +189,21 @@ img {
     <span class="en">1. Arriving at the apartment</span>
   </h2>
 
-  <img src="img/entree.jpg">
+  <img src="img/entree.jpg" alt="Entrée résidence">
 
-  <img src="img/entree-badge.jpg">
-  <p class="caption fr">
-    <strong>Accès :</strong> Ouvrez la porte de la résidence avec le badge.
-  </p>
-  <p class="caption en">
-    <strong>Access:</strong> Open the residence door using the badge.
-  </p>
+  <img src="img/entree-badge.jpg" alt="Badge entrée">
+  <p class="caption fr"><strong>Accès :</strong> Ouvrez la porte de la résidence avec le badge.</p>
+  <p class="caption en"><strong>Access:</strong> Open the residence door using the badge.</p>
 
-  <img src="img/ascenseur.jpg">
-  <p class="caption fr">
-    Dirigez-vous vers l’ascenseur.
-  </p>
-  <p class="caption en">
-    Go to the elevator.
-  </p>
+  <img src="img/ascenseur.jpg" alt="Ascenseur">
+  <p class="caption fr">Dirigez-vous vers l’ascenseur.</p>
+  <p class="caption en">Go to the elevator.</p>
 
-  <img src="img/porte-appartement.jpg">
-  <p class="caption fr">
-    En sortant de l’ascenseur, tournez à droite puis prenez la 1ère porte à gauche, appartement n°139.
-  </p>
-  <p class="caption en">
-    When exiting the elevator, turn right, then take the first door on the left, apartment No.139.
-  </p>
+  <img src="img/porte-appartement.jpg" alt="Porte appartement">
+  <p class="caption fr">En sortant de l’ascenseur, tournez à droite puis prenez la 1ère porte à gauche, appartement n°139.</p>
+  <p class="caption en">When exiting the elevator, turn right, then take the first door on the left, apartment No.139.</p>
 </section>
 
-<!-- CLES -->
 <section class="card" id="cles">
   <h2>
     <i data-lucide="key"></i>
@@ -220,48 +211,27 @@ img {
     <span class="en">2. Key box</span>
   </h2>
 
-  <img src="img/keybox-1.jpg">
-  <p class="caption fr">
-    <strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble comme indiqué par la flèche.
-  </p>
-  <p class="caption en">
-    <strong>Step 1:</strong> Turn right at the building entrance as shown by the arrow.
-  </p>
+  <img src="img/keybox-1.jpg" alt="Étape 1">
+  <p class="caption fr"><strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble comme indiqué par la flèche.</p>
+  <p class="caption en"><strong>Step 1:</strong> Turn right at the building entrance as shown by the arrow.</p>
 
-  <img src="img/keybox-2.jpg">
-  <p class="caption fr">
-    <strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué par la flèche.
-  </p>
-  <p class="caption en">
-    <strong>Step 2:</strong> Turn at the corner of the building as indicated.
-  </p>
+  <img src="img/keybox-2.jpg" alt="Étape 2">
+  <p class="caption fr"><strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué par la flèche.</p>
+  <p class="caption en"><strong>Step 2:</strong> Once you reach the corner of the building, turn as shown by the arrow.</p>
 
-  <img src="img/keybox-3.jpg">
-  <p class="caption fr">
-    <strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking comme indiqué par la flèche.
-  </p>
-  <p class="caption en">
-    <strong>Step 3:</strong> Walk towards the parking entrance.
-  </p>
+  <img src="img/keybox-3.jpg" alt="Étape 3">
+  <p class="caption fr"><strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking comme indiqué par la flèche.</p>
+  <p class="caption en"><strong>Step 3:</strong> Walk towards the parking entrance as shown by the arrow.</p>
 
-  <img src="img/keybox-4.jpg">
-  <p class="caption fr">
-    <strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.
-  </p>
-  <p class="caption en">
-    <strong>Step 4:</strong> The key box is attached to the green fence on the left side.
-  </p>
+  <img src="img/keybox-4.jpg" alt="Étape 4">
+  <p class="caption fr"><strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.</p>
+  <p class="caption en"><strong>Step 4:</strong> The key box is attached to the green fence on the left side of the road.</p>
 
-  <img src="img/keybox-5.jpg">
-  <p class="caption fr">
-    <strong>Étape 5 :</strong> Entrez le code reçu par message pour récupérer les clés.
-  </p>
-  <p class="caption en">
-    <strong>Step 5:</strong> Enter the code sent by message to collect the keys.
-  </p>
+  <img src="img/keybox-5.jpg" alt="Étape 5">
+  <p class="caption fr"><strong>Étape 5 :</strong> Voici la boîte à clés. Entrez le code qui vous a été communiqué par message pour récupérer les clés.</p>
+  <p class="caption en"><strong>Step 5:</strong> This is the key box. Enter the code sent to you by message to retrieve the keys.</p>
 </section>
 
-<!-- PARKING -->
 <section class="card" id="parking">
   <h2>
     <i data-lucide="car"></i>
@@ -269,46 +239,26 @@ img {
     <span class="en">3. Parking access</span>
   </h2>
 
-  <img src="img/parking-1.jpg">
-  <p class="caption fr">
-    <strong>Étape 1 :</strong> Face à l’entrée, dirigez-vous vers la droite puis prenez à gauche au bout de la rue.
-  </p>
-  <p class="caption en">
-    <strong>Step 1:</strong> Facing the entrance, go right then left at the end.
-  </p>
+  <img src="img/parking-1.jpg" alt="Parking étape 1">
+  <p class="caption fr"><strong>Étape 1 :</strong> Face à l’entrée de la résidence, dirigez-vous vers la droite. Au bout de la rue, prenez à gauche.</p>
+  <p class="caption en"><strong>Step 1:</strong> Facing the residence entrance, go to the right. At the end of the street, turn left.</p>
 
-  <img src="img/parking-2.jpg">
-  <p class="caption fr">
-    <strong>Étape 2 :</strong> Utilisez le bip du trousseau pour ouvrir le parking.
-  </p>
-  <p class="caption en">
-    <strong>Step 2:</strong> Use the remote control to open the parking gate.
-  </p>
+  <img src="img/parking-2.jpg" alt="Parking étape 2">
+  <p class="caption fr"><strong>Étape 2 :</strong> Voici l’entrée du parking. Utilisez le bip présent sur le trousseau de clés pour ouvrir le portail.</p>
+  <p class="caption en"><strong>Step 2:</strong> This is the parking entrance. Use the remote control on the key set to open the gate.</p>
 
-  <img src="img/parking-3.jpg">
-  <p class="caption fr">
-    <strong>Étape 3 :</strong> Utilisez la petite clé pour ouvrir la porte du garage.
-  </p>
-  <p class="caption en">
-    <strong>Step 3:</strong> Use the small key to open the garage door.
-  </p>
+  <img src="img/parking-3.jpg" alt="Parking étape 3">
+  <p class="caption fr"><strong>Étape 3 :</strong> Voici la porte du garage. Utilisez la petite clé du trousseau pour ouvrir la serrure.</p>
+  <p class="caption en"><strong>Step 3:</strong> This is the garage door. Use the small key from the key set to unlock it.</p>
 </section>
 
 </main>
 
 <script>
 function setLang(lang) {
-  document.querySelectorAll('.fr').forEach(el => {
-    el.style.display = lang === 'fr' ? 'block' : 'none';
-  });
-
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = lang === 'en' ? 'block' : 'none';
-  });
-
+  document.body.className = 'lang-' + lang;
   document.documentElement.lang = lang;
 }
-
 lucide.createIcons();
 </script>
 
