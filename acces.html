@@ -22,6 +22,30 @@ header {
   padding: 25px;
   text-align: center;
   border-radius: 0 0 28px 28px;
+  position: relative;
+}
+
+/* LANG */
+.lang-top {
+  position:absolute;
+  top:15px;
+  right:15px;
+}
+
+.lang-top button {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.7);
+  color:white;
+  padding:6px 10px;
+  border-radius:10px;
+  margin-left:5px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-top button:hover {
+  background:white;
+  color:#0f3557;
 }
 
 header a {
@@ -34,7 +58,7 @@ header a {
   font-weight: bold;
 }
 
-/* NAV 3 BOUTONS */
+/* NAV */
 .nav-acces {
   position: sticky;
   top: 0;
@@ -50,22 +74,15 @@ header a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 5px;
   background: white;
   color: #0f3557;
-  padding: 10px 6px;
+  padding: 10px;
   border-radius: 15px;
   text-decoration: none;
   font-weight: bold;
   font-size: 13px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-  text-align: center;
-}
-
-.nav-acces i {
-  width: 20px;
-  height: 20px;
 }
 
 /* MAIN */
@@ -108,33 +125,53 @@ img {
   margin: 8px 0 18px;
   line-height: 1.5;
 }
+
+.en { display:none; }
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1><i data-lucide="home"></i> Accès appartement</h1>
+
+  <!-- LANG -->
+  <div class="lang-top">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <h1>
+    <i data-lucide="home"></i>
+    <span class="fr">Accès appartement</span>
+    <span class="en">Apartment access</span>
+  </h1>
+
   <a href="index.html">
-    <i data-lucide="arrow-left"></i> Retour à l’accueil
+    <i data-lucide="arrow-left"></i>
+    <span class="fr">Retour à l’accueil</span>
+    <span class="en">Back</span>
   </a>
+
 </header>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <div class="nav-acces">
   <a href="#appartement">
     <i data-lucide="home"></i>
-    <span>Appartement</span>
+    <span class="fr">Appartement</span>
+    <span class="en">Apartment</span>
   </a>
 
   <a href="#cles">
     <i data-lucide="key"></i>
-    <span>Clés</span>
+    <span class="fr">Clés</span>
+    <span class="en">Keys</span>
   </a>
 
   <a href="#parking">
     <i data-lucide="car"></i>
-    <span>Parking</span>
+    <span class="fr">Parking</span>
+    <span class="en">Parking</span>
   </a>
 </div>
 
@@ -142,79 +179,136 @@ img {
 
 <!-- APPARTEMENT -->
 <section class="card" id="appartement">
-  <h2><i data-lucide="home"></i> 1. Arriver à l’appartement</h2>
+  <h2>
+    <i data-lucide="home"></i>
+    <span class="fr">1. Arriver à l’appartement</span>
+    <span class="en">1. Arriving at the apartment</span>
+  </h2>
 
   <img src="img/entree.jpg">
 
   <img src="img/entree-badge.jpg">
-  <p class="caption">
+  <p class="caption fr">
     <strong>Accès :</strong> Ouvrez la porte de la résidence avec le badge.
+  </p>
+  <p class="caption en">
+    <strong>Access:</strong> Open the residence door using the badge.
   </p>
 
   <img src="img/ascenseur.jpg">
-  <p class="caption">
+  <p class="caption fr">
     Dirigez-vous vers l’ascenseur.
+  </p>
+  <p class="caption en">
+    Go to the elevator.
   </p>
 
   <img src="img/porte-appartement.jpg">
-  <p class="caption">
+  <p class="caption fr">
     En sortant de l’ascenseur, tournez à droite puis prenez la 1ère porte à gauche, appartement n°139.
+  </p>
+  <p class="caption en">
+    When exiting the elevator, turn right, then take the first door on the left, apartment No.139.
   </p>
 </section>
 
-<!-- CLE -->
+<!-- CLES -->
 <section class="card" id="cles">
-  <h2><i data-lucide="key"></i> 2. Boîte à clés</h2>
+  <h2>
+    <i data-lucide="key"></i>
+    <span class="fr">2. Boîte à clés</span>
+    <span class="en">2. Key box</span>
+  </h2>
 
   <img src="img/keybox-1.jpg">
-  <p class="caption">
+  <p class="caption fr">
     <strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble comme indiqué par la flèche.
+  </p>
+  <p class="caption en">
+    <strong>Step 1:</strong> Turn right at the building entrance as shown by the arrow.
   </p>
 
   <img src="img/keybox-2.jpg">
-  <p class="caption">
+  <p class="caption fr">
     <strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué par la flèche.
+  </p>
+  <p class="caption en">
+    <strong>Step 2:</strong> Turn at the corner of the building as indicated.
   </p>
 
   <img src="img/keybox-3.jpg">
-  <p class="caption">
+  <p class="caption fr">
     <strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking comme indiqué par la flèche.
+  </p>
+  <p class="caption en">
+    <strong>Step 3:</strong> Walk towards the parking entrance.
   </p>
 
   <img src="img/keybox-4.jpg">
-  <p class="caption">
+  <p class="caption fr">
     <strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.
+  </p>
+  <p class="caption en">
+    <strong>Step 4:</strong> The key box is attached to the green fence on the left side.
   </p>
 
   <img src="img/keybox-5.jpg">
-  <p class="caption">
-    <strong>Étape 5 :</strong> Voici la boîte à clés. Entrez le code qui vous a été communiqué par message pour récupérer les clés.
+  <p class="caption fr">
+    <strong>Étape 5 :</strong> Entrez le code reçu par message pour récupérer les clés.
+  </p>
+  <p class="caption en">
+    <strong>Step 5:</strong> Enter the code sent by message to collect the keys.
   </p>
 </section>
 
 <!-- PARKING -->
 <section class="card" id="parking">
-  <h2><i data-lucide="car"></i> 3. Accès parking</h2>
+  <h2>
+    <i data-lucide="car"></i>
+    <span class="fr">3. Accès parking</span>
+    <span class="en">3. Parking access</span>
+  </h2>
 
   <img src="img/parking-1.jpg">
-  <p class="caption">
-    <strong>Étape 1 :</strong> Face à l’entrée de la résidence, dirigez-vous vers la droite. Au bout de la rue, prenez à gauche.
+  <p class="caption fr">
+    <strong>Étape 1 :</strong> Face à l’entrée, dirigez-vous vers la droite puis prenez à gauche au bout de la rue.
+  </p>
+  <p class="caption en">
+    <strong>Step 1:</strong> Facing the entrance, go right then left at the end.
   </p>
 
   <img src="img/parking-2.jpg">
-  <p class="caption">
-    <strong>Étape 2 :</strong> Voici l’entrée du parking. Utilisez le bip présent sur le trousseau de clés pour ouvrir le portail.
+  <p class="caption fr">
+    <strong>Étape 2 :</strong> Utilisez le bip du trousseau pour ouvrir le parking.
+  </p>
+  <p class="caption en">
+    <strong>Step 2:</strong> Use the remote control to open the parking gate.
   </p>
 
   <img src="img/parking-3.jpg">
-  <p class="caption">
-    <strong>Étape 3 :</strong> Voici la porte du garage. Utilisez la petite clé du trousseau pour ouvrir la serrure.
+  <p class="caption fr">
+    <strong>Étape 3 :</strong> Utilisez la petite clé pour ouvrir la porte du garage.
+  </p>
+  <p class="caption en">
+    <strong>Step 3:</strong> Use the small key to open the garage door.
   </p>
 </section>
 
 </main>
 
 <script>
+function setLang(lang) {
+  document.querySelectorAll('.fr').forEach(el => {
+    el.style.display = lang === 'fr' ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = lang === 'en' ? 'block' : 'none';
+  });
+
+  document.documentElement.lang = lang;
+}
+
 lucide.createIcons();
 </script>
 
