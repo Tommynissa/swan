@@ -18,18 +18,31 @@ body {
 header {
   background:#0f3557;
   color:white;
-  padding:30px;
+  padding:35px 20px 30px;
   border-radius:0 0 30px 30px;
 }
 
-.logo { width:120px; }
+.logo {
+  width:180px; /* AGRANDI */
+  margin-bottom:15px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.address {
+  margin-top:10px;
+  line-height:1.6;
+  font-size:14px;
+}
 
 .btn {
-  display:block;
-  margin:15px auto;
-  padding:15px;
-  width:80%;
-  max-width:300px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top:18px;
+  padding:12px 18px;
   background:#2f80ed;
   color:white;
   border-radius:15px;
@@ -37,7 +50,24 @@ header {
   font-weight:bold;
 }
 
-.btn i {
+.menu {
+  margin-top:30px;
+}
+
+.menu a {
+  display:block;
+  margin:12px auto;
+  padding:16px;
+  width:80%;
+  max-width:320px;
+  background:#2f80ed;
+  color:white;
+  border-radius:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu a i {
   margin-right:8px;
 }
 </style>
@@ -46,20 +76,39 @@ header {
 <body>
 
 <header>
-  <img src="img/logo-swan.png" class="logo">
-  <h1>Swan</h1>
-  <p>17 avenue de Belgique</p>
+
+  <!-- LOGO AGRANDI -->
+  <img src="img/logo-swan.png" class="logo" alt="Logo Swan">
+
+  <!-- ADRESSE -->
+  <div class="address">
+    17 avenue de Belgique<br>
+    06220 Vallauris<br>
+    4ème étage – Porte 139
+  </div>
+
+  <!-- GOOGLE MAPS -->
+  <a class="btn" target="_blank"
+     href="https://www.google.com/maps/search/?api=1&query=17+avenue+de+Belgique+06220+Vallauris">
+    <i data-lucide="map-pin"></i>
+    Google Maps
+  </a>
+
 </header>
 
-<h2>Guide du séjour</h2>
+<div class="menu">
 
-<a href="acces.html" class="btn">
-  <i data-lucide="key"></i> Accès appartement
-</a>
+  <a href="acces.html">
+    <i data-lucide="key"></i>
+    Accès appartement
+  </a>
 
-<a href="wifi.html" class="btn">
-  <i data-lucide="wifi"></i> WiFi
-</a>
+  <a href="wifi.html">
+    <i data-lucide="wifi"></i>
+    WiFi
+  </a>
+
+</div>
 
 <script>
 lucide.createIcons();
