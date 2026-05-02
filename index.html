@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accès Appartement - Vallauris</title>
+  <title>Guide d'arrivée - Vallauris</title>
 
   <style>
     :root {
-      --blue-dark: #123c69;
+      --blue-dark: #0f3557;
       --blue: #2f80ed;
-      --blue-light: #dff1ff;
+      --blue-light: #e4f3ff;
       --white: #ffffff;
       --text: #1f2937;
+      --soft: #f6fbff;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -24,29 +29,27 @@
     header {
       background: var(--blue-dark);
       color: white;
-      padding: 30px 20px;
+      padding: 34px 20px 28px;
       text-align: center;
-      border-radius: 0 0 30px 30px;
+      border-radius: 0 0 32px 32px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 30px;
     }
 
-    .lang {
-      margin-top: 15px;
+    header p {
+      margin: 10px 0;
+      opacity: 0.95;
     }
 
-    .lang button {
-      border: none;
-      background: white;
-      color: var(--blue-dark);
-      padding: 10px 16px;
-      margin: 4px;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
+    .top-actions {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -55,42 +58,122 @@
       color: white;
       text-decoration: none;
       padding: 12px 18px;
-      border-radius: 16px;
+      border-radius: 18px;
       font-weight: bold;
-      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lang button {
+      border: none;
+      background: white;
+      color: var(--blue-dark);
+      padding: 10px 16px;
+      border-radius: 18px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     main {
-      max-width: 850px;
-      margin: 25px auto;
-      padding: 0 18px;
+      max-width: 900px;
+      margin: 26px auto;
+      padding: 0 18px 40px;
+    }
+
+    .welcome {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 53, 87, 0.10);
+    }
+
+    .welcome h2 {
+      margin-top: 0;
+      color: var(--blue-dark);
     }
 
     .card {
       background: white;
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 22px;
-      margin-bottom: 22px;
-      box-shadow: 0 8px 25px rgba(18, 60, 105, 0.12);
+      margin-bottom: 24px;
+      box-shadow: 0 8px 25px rgba(15, 53, 87, 0.12);
     }
 
     .card h2 {
       color: var(--blue-dark);
+      margin-top: 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
     }
 
     .real-photo {
       width: 100%;
       border-radius: 18px;
-      margin: 15px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      margin: 15px 0 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+      display: block;
     }
 
     .caption {
-      background: #f4f9ff;
+      background: var(--soft);
       border-left: 4px solid var(--blue);
-      padding: 12px;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      margin: 8px 0 18px;
+      line-height: 1.5;
+    }
+
+    .wifi-box {
+      background: var(--soft);
+      border: 1px solid #d8ebff;
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .wifi-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #dbeeff;
+      flex-wrap: wrap;
+    }
+
+    .wifi-line:last-child {
+      border-bottom: none;
+    }
+
+    .wifi-value {
+      font-weight: bold;
+      color: var(--blue-dark);
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      width: 100%;
+      margin-top: 16px;
+      background: var(--blue-dark);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--blue-dark);
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.8;
     }
 
     .en {
@@ -102,92 +185,144 @@
 <body>
 
 <header>
-  <h1 class="fr">Accès à l’appartement</h1>
-  <h1 class="en">Apartment Access</h1>
+  <h1 class="fr">Bienvenue à l’appartement</h1>
+  <h1 class="en">Welcome to the apartment</h1>
 
   <p>17 avenue de Belgique, 06220 Vallauris</p>
 
-  <!-- GOOGLE MAPS -->
-  <div>
+  <div class="top-actions">
     <a class="btn" target="_blank"
        href="https://www.google.com/maps/search/?api=1&query=17+avenue+de+Belgique+06220+Vallauris">
       📍 Google Maps
     </a>
-  </div>
 
-  <div class="lang">
-    <button onclick="setLang('fr')">🇫🇷 Français</button>
-    <button onclick="setLang('en')">🇬🇧 English</button>
+    <div class="lang">
+      <button onclick="setLang('fr')">🇫🇷 Français</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+    </div>
   </div>
 </header>
 
 <main>
 
-<!-- ARRIVEE -->
+<section class="welcome">
+  <h2 class="fr">Guide d’arrivée</h2>
+  <h2 class="en">Arrival guide</h2>
+
+  <p class="fr">
+    Vous trouverez ici toutes les informations utiles pour accéder à l’appartement,
+    récupérer les clés, utiliser le parking et vous connecter au WiFi.
+  </p>
+
+  <p class="en">
+    Here you will find all the useful information to access the apartment,
+    collect the keys, use the parking and connect to WiFi.
+  </p>
+</section>
+
 <section class="card">
+  <span class="section-label">WiFi</span>
+
+  <h2 class="fr">Connexion WiFi</h2>
+  <h2 class="en">WiFi connection</h2>
+
+  <p class="fr">Vous pouvez vous connecter au réseau WiFi avec les informations ci-dessous.</p>
+  <p class="en">You can connect to the WiFi network using the information below.</p>
+
+  <div class="wifi-box">
+    <div class="wifi-line">
+      <span class="fr">Nom du réseau</span>
+      <span class="en">Network name</span>
+      <span class="wifi-value">freebox-5BFE08</span>
+    </div>
+
+    <div class="wifi-line">
+      <span class="fr">Mot de passe</span>
+      <span class="en">Password</span>
+      <span class="wifi-value" id="wifiPassword">vrczwqwrtmqxc4w3q679cd</span>
+    </div>
+
+    <button class="btn copy-btn fr" onclick="copyWifi()">Copier le mot de passe</button>
+    <button class="btn copy-btn en" onclick="copyWifi()">Copy password</button>
+  </div>
+</section>
+
+<section class="card">
+  <span class="section-label fr">Accès appartement</span>
+  <span class="section-label en">Apartment access</span>
+
   <h2 class="fr">1. Arriver à l’appartement</h2>
   <h2 class="en">1. Arriving at the apartment</h2>
 
-  <img src="img/entree.jpg" class="real-photo">
+  <img src="img/entree.jpg" class="real-photo" alt="Entrée résidence">
 
-  <img src="img/entree-badge.jpg" class="real-photo">
-  <p class="caption fr"><strong>Accès :</strong> Ouvrez la porte avec le badge.</p>
-  <p class="caption en"><strong>Access:</strong> Open the door using the badge.</p>
+  <img src="img/entree-badge.jpg" class="real-photo" alt="Badge entrée">
+  <p class="caption fr"><strong>Accès :</strong> Ouvrez la porte de la résidence avec le badge.</p>
+  <p class="caption en"><strong>Access:</strong> Open the residence door using the badge.</p>
 
-  <img src="img/ascenseur.jpg" class="real-photo">
+  <img src="img/ascenseur.jpg" class="real-photo" alt="Ascenseur">
   <p class="caption fr">Dirigez-vous vers l’ascenseur.</p>
   <p class="caption en">Go to the elevator.</p>
 
-  <img src="img/porte-appartement.jpg" class="real-photo">
-  <p class="caption fr">En sortant, à droite puis 1ère porte à gauche (n°139).</p>
-  <p class="caption en">Exit, turn right, first door on the left (No.139).</p>
+  <img src="img/porte-appartement.jpg" class="real-photo" alt="Porte appartement">
+  <p class="caption fr">En sortant de l’ascenseur, tournez à droite puis prenez la 1ère porte à gauche, appartement n°139.</p>
+  <p class="caption en">When exiting the elevator, turn right, then take the first door on the left, apartment No.139.</p>
 </section>
 
-<!-- BOITE A CLE -->
 <section class="card">
+  <span class="section-label fr">Clés</span>
+  <span class="section-label en">Keys</span>
+
   <h2 class="fr">2. Boîte à clés</h2>
   <h2 class="en">2. Key box</h2>
 
   <img src="img/keybox-1.jpg" class="real-photo">
-  <p class="caption fr">Étape 1 : Prenez à droite.</p>
-  <p class="caption en">Step 1: Turn right.</p>
+  <p class="caption fr"><strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble.</p>
+  <p class="caption en"><strong>Step 1:</strong> Turn right from the building entrance.</p>
 
   <img src="img/keybox-2.jpg" class="real-photo">
-  <p class="caption fr">Étape 2 : Tournez à l’angle.</p>
-  <p class="caption en">Step 2: Turn at the corner.</p>
+  <p class="caption fr"><strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué.</p>
+  <p class="caption en"><strong>Step 2:</strong> At the corner of the building, turn as shown.</p>
 
   <img src="img/keybox-3.jpg" class="real-photo">
-  <p class="caption fr">Étape 3 : Avancez vers le parking.</p>
-  <p class="caption en">Step 3: Walk toward parking.</p>
+  <p class="caption fr"><strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking.</p>
+  <p class="caption en"><strong>Step 3:</strong> Walk towards the parking entrance.</p>
 
   <img src="img/keybox-4.jpg" class="real-photo">
-  <p class="caption fr">Étape 4 : Boîte sur grillage à gauche.</p>
-  <p class="caption en">Step 4: Box on left fence.</p>
+  <p class="caption fr"><strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.</p>
+  <p class="caption en"><strong>Step 4:</strong> The key box is attached to the green fence on the left side of the road.</p>
 
   <img src="img/keybox-5.jpg" class="real-photo">
-  <p class="caption fr">Étape 5 : Entrez le code reçu par message.</p>
-  <p class="caption en">Step 5: Enter the code sent by message.</p>
+  <p class="caption fr"><strong>Étape 5 :</strong> Entrez le code reçu par message pour récupérer les clés.</p>
+  <p class="caption en"><strong>Step 5:</strong> Enter the code sent by message to collect the keys.</p>
 </section>
 
-<!-- PARKING -->
 <section class="card">
+  <span class="section-label fr">Parking</span>
+  <span class="section-label en">Parking</span>
+
   <h2 class="fr">3. Accès parking</h2>
   <h2 class="en">3. Parking access</h2>
 
   <img src="img/parking-1.jpg" class="real-photo">
-  <p class="caption fr">Étape 1 : À droite puis gauche au bout.</p>
-  <p class="caption en">Step 1: Right then left.</p>
+  <p class="caption fr"><strong>Étape 1 :</strong> Face à l’entrée, dirigez-vous vers la droite. Au bout de la rue, prenez à gauche.</p>
+  <p class="caption en"><strong>Step 1:</strong> Facing the entrance, go to the right. At the end of the street, turn left.</p>
 
   <img src="img/parking-2.jpg" class="real-photo">
-  <p class="caption fr">Étape 2 : Ouvrez avec le bip.</p>
-  <p class="caption en">Step 2: Open with remote.</p>
+  <p class="caption fr"><strong>Étape 2 :</strong> Voici l’entrée du parking. Utilisez le bip présent sur le trousseau de clés.</p>
+  <p class="caption en"><strong>Step 2:</strong> This is the parking entrance. Use the remote control on the key set.</p>
 
   <img src="img/parking-3.jpg" class="real-photo">
-  <p class="caption fr">Étape 3 : Ouvrez avec la petite clé.</p>
-  <p class="caption en">Step 3: Use small key.</p>
+  <p class="caption fr"><strong>Étape 3 :</strong> Voici la porte du garage. La petite clé du trousseau ouvre la serrure.</p>
+  <p class="caption en"><strong>Step 3:</strong> This is the garage door. The small key on the key set opens the lock.</p>
 </section>
 
 </main>
+
+<footer>
+  <span class="fr">Bon séjour à Vallauris 🌊</span>
+  <span class="en">Enjoy your stay in Vallauris 🌊</span>
+</footer>
 
 <script>
 function setLang(lang) {
@@ -197,6 +332,17 @@ function setLang(lang) {
 
   document.querySelectorAll('.en').forEach(el => {
     el.style.display = lang === 'en' ? 'block' : 'none';
+  });
+
+  document.documentElement.lang = lang;
+}
+
+function copyWifi() {
+  const password = document.getElementById('wifiPassword').innerText;
+  navigator.clipboard.writeText(password).then(() => {
+    alert(document.documentElement.lang === 'en'
+      ? 'WiFi password copied!'
+      : 'Mot de passe WiFi copié !');
   });
 }
 </script>
