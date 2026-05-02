@@ -6,32 +6,59 @@
 <title>Accès - Swan</title>
 
 <style>
-body { font-family:Arial; margin:0; background:#f4f9ff; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(#e4f3ff, white);
+  color: #1f2937;
+}
 
 header {
-  background:#0f3557;
-  color:white;
-  padding:20px;
-  text-align:center;
+  background: #0f3557;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 0 0 28px 28px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 18px 40px;
 }
 
 .card {
-  background:white;
-  margin:15px;
-  padding:15px;
-  border-radius:15px;
+  background: white;
+  padding: 22px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 25px rgba(15, 53, 87, 0.12);
+}
+
+.card h2 {
+  color: #0f3557;
 }
 
 img {
-  width:100%;
-  border-radius:12px;
-  margin:10px 0;
+  width: 100%;
+  border-radius: 18px;
+  margin: 15px 0 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
 }
 
 .caption {
-  background:#eef6ff;
-  padding:10px;
-  border-radius:10px;
+  background: #f6fbff;
+  border-left: 4px solid #2f80ed;
+  padding: 13px 14px;
+  border-radius: 14px;
+  margin: 8px 0 18px;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -40,43 +67,81 @@ img {
 
 <header>
   <h1>Accès appartement</h1>
-  <a href="index.html" style="color:white;">⬅ Retour</a>
+  <a href="index.html">⬅ Retour à l’accueil</a>
 </header>
 
-<div class="card">
-<h2>Arrivée</h2>
+<main>
 
-<img src="img/entree.jpg">
-<img src="img/entree-badge.jpg">
-<p class="caption">Ouvrez avec le badge</p>
+<section class="card">
+  <h2>1. Arriver à l’appartement</h2>
 
-<img src="img/ascenseur.jpg">
-<p class="caption">Prenez l’ascenseur</p>
+  <img src="img/entree.jpg" alt="Entrée résidence">
 
-<img src="img/porte-appartement.jpg">
-<p class="caption">Appartement n°139</p>
+  <img src="img/entree-badge.jpg" alt="Badge entrée">
+  <p class="caption">
+    <strong>Accès :</strong> Ouvrez la porte de la résidence avec le badge.
+  </p>
 
-</div>
+  <img src="img/ascenseur.jpg" alt="Ascenseur">
+  <p class="caption">
+    Dirigez-vous vers l’ascenseur.
+  </p>
 
-<div class="card">
-<h2>Boîte à clés</h2>
+  <img src="img/porte-appartement.jpg" alt="Porte appartement">
+  <p class="caption">
+    En sortant de l’ascenseur, tournez à droite puis prenez la 1ère porte à gauche, appartement n°139.
+  </p>
+</section>
 
-<img src="img/keybox-1.jpg">
-<img src="img/keybox-2.jpg">
-<img src="img/keybox-3.jpg">
-<img src="img/keybox-4.jpg">
-<img src="img/keybox-5.jpg">
+<section class="card">
+  <h2>2. Boîte à clés</h2>
 
-</div>
+  <img src="img/keybox-1.jpg" alt="Boîte à clés étape 1">
+  <p class="caption">
+    <strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble comme indiqué par la flèche.
+  </p>
 
-<div class="card">
-<h2>Parking</h2>
+  <img src="img/keybox-2.jpg" alt="Boîte à clés étape 2">
+  <p class="caption">
+    <strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué par la flèche.
+  </p>
 
-<img src="img/parking-1.jpg">
-<img src="img/parking-2.jpg">
-<img src="img/parking-3.jpg">
+  <img src="img/keybox-3.jpg" alt="Boîte à clés étape 3">
+  <p class="caption">
+    <strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking comme indiqué par la flèche.
+  </p>
 
-</div>
+  <img src="img/keybox-4.jpg" alt="Boîte à clés étape 4">
+  <p class="caption">
+    <strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.
+  </p>
+
+  <img src="img/keybox-5.jpg" alt="Boîte à clés étape 5">
+  <p class="caption">
+    <strong>Étape 5 :</strong> Voici la boîte à clés. Entrez le code qui vous a été communiqué par message pour récupérer les clés.
+  </p>
+</section>
+
+<section class="card">
+  <h2>3. Accès parking</h2>
+
+  <img src="img/parking-1.jpg" alt="Parking étape 1">
+  <p class="caption">
+    <strong>Étape 1 :</strong> Face à l’entrée de la résidence, dirigez-vous vers la droite. Au bout de la rue, prenez à gauche.
+  </p>
+
+  <img src="img/parking-2.jpg" alt="Parking étape 2">
+  <p class="caption">
+    <strong>Étape 2 :</strong> Voici l’entrée du parking. Utilisez le bip présent sur le trousseau de clés pour ouvrir le portail.
+  </p>
+
+  <img src="img/parking-3.jpg" alt="Parking étape 3">
+  <p class="caption">
+    <strong>Étape 3 :</strong> Voici la porte du garage. Utilisez la petite clé du trousseau pour ouvrir la serrure.
+  </p>
+</section>
+
+</main>
 
 </body>
 </html>
