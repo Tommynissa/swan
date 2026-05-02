@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accès - Swan</title>
+
+<style>
+body { font-family:Arial; margin:0; background:#f4f9ff; }
+
+header {
+  background:#0f3557;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.card {
+  background:white;
+  margin:15px;
+  padding:15px;
+  border-radius:15px;
+}
+
+img {
+  width:100%;
+  border-radius:12px;
+  margin:10px 0;
+}
+
+.caption {
+  background:#eef6ff;
+  padding:10px;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Accès appartement</h1>
+  <a href="index.html" style="color:white;">⬅ Retour</a>
+</header>
+
+<div class="card">
+<h2>Arrivée</h2>
+
+<img src="img/entree.jpg">
+<img src="img/entree-badge.jpg">
+<p class="caption">Ouvrez avec le badge</p>
+
+<img src="img/ascenseur.jpg">
+<p class="caption">Prenez l’ascenseur</p>
+
+<img src="img/porte-appartement.jpg">
+<p class="caption">Appartement n°139</p>
+
+</div>
+
+<div class="card">
+<h2>Boîte à clés</h2>
+
+<img src="img/keybox-1.jpg">
+<img src="img/keybox-2.jpg">
+<img src="img/keybox-3.jpg">
+<img src="img/keybox-4.jpg">
+<img src="img/keybox-5.jpg">
+
+</div>
+
+<div class="card">
+<h2>Parking</h2>
+
+<img src="img/parking-1.jpg">
+<img src="img/parking-2.jpg">
+<img src="img/parking-3.jpg">
+
+</div>
+
+</body>
+</html>
