@@ -49,6 +49,17 @@
       cursor: pointer;
     }
 
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
     main {
       max-width: 850px;
       margin: 25px auto;
@@ -82,16 +93,6 @@
       margin-bottom: 15px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 16px;
-      font-weight: bold;
-    }
-
     .en {
       display: none;
     }
@@ -105,7 +106,14 @@
   <h1 class="en">Apartment Access</h1>
 
   <p>17 boulevard de Belgique, 06220 Golfe-Juan</p>
-  <p>4eme etages porte 139</p>
+
+  <!-- GOOGLE MAPS EN HAUT -->
+  <div>
+    <a class="btn" target="_blank"
+       href="https://www.google.com/maps/search/?api=1&query=17+Boulevard+de+Belgique+06220+Golfe-Juan">
+      📍 Google Maps
+    </a>
+  </div>
 
   <div class="lang">
     <button onclick="setLang('fr')">🇫🇷 Français</button>
@@ -121,23 +129,18 @@
   <h2 class="en">1. Arriving at the apartment</h2>
 
   <img src="img/entree.jpg" class="real-photo">
-  <img src="img/entree-badge.jpg" class="real-photo">
 
-  <p class="caption fr">Ouvrez la porte avec le badge.</p>
-  <p class="caption en">Open the door using the badge.</p>
+  <img src="img/entree-badge.jpg" class="real-photo">
+  <p class="caption fr"><strong>Accès :</strong> Ouvrez la porte avec le badge.</p>
+  <p class="caption en"><strong>Access:</strong> Open the door using the badge.</p>
 
   <img src="img/ascenseur.jpg" class="real-photo">
-  <p class="caption fr">Porte d acces vers l’ascenseur.</p>
+  <p class="caption fr">Dirigez-vous vers l’ascenseur.</p>
   <p class="caption en">Go to the elevator.</p>
 
   <img src="img/porte-appartement.jpg" class="real-photo">
   <p class="caption fr">En sortant, à droite puis 1ère porte à gauche (n°139).</p>
   <p class="caption en">Exit, turn right, first door on the left (No.139).</p>
-
-  <a class="btn" target="_blank"
-     href="https://www.google.com/maps/search/?api=1&query=17+Boulevard+de+Belgique+06220+Golfe-Juan">
-    Google Maps
-  </a>
 </section>
 
 <!-- BOITE A CLE -->
