@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accès - Swan</title>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -16,15 +18,17 @@ body {
 header {
   background: #0f3557;
   color: white;
-  padding: 25px 20px;
+  padding: 25px;
   text-align: center;
-  border-radius: 0 0 28px 28px;
 }
 
 header a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 main {
@@ -43,6 +47,9 @@ main {
 
 .card h2 {
   color: #0f3557;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 img {
@@ -66,14 +73,17 @@ img {
 <body>
 
 <header>
-  <h1>Accès appartement</h1>
-  <a href="index.html">⬅ Retour à l’accueil</a>
+  <h1><i data-lucide="home"></i> Accès appartement</h1>
+  <a href="index.html">
+    <i data-lucide="arrow-left"></i> Retour à l’accueil
+  </a>
 </header>
 
 <main>
 
+<!-- ARRIVEE -->
 <section class="card">
-  <h2>1. Arriver à l’appartement</h2>
+  <h2><i data-lucide="home"></i> 1. Arriver à l’appartement</h2>
 
   <img src="img/entree.jpg" alt="Entrée résidence">
 
@@ -93,37 +103,39 @@ img {
   </p>
 </section>
 
+<!-- BOITE A CLE -->
 <section class="card">
-  <h2>2. Boîte à clés</h2>
+  <h2><i data-lucide="key"></i> 2. Boîte à clés</h2>
 
-  <img src="img/keybox-1.jpg" alt="Boîte à clés étape 1">
+  <img src="img/keybox-1.jpg" alt="Étape 1">
   <p class="caption">
     <strong>Étape 1 :</strong> Prenez à droite de l’entrée de l’immeuble comme indiqué par la flèche.
   </p>
 
-  <img src="img/keybox-2.jpg" alt="Boîte à clés étape 2">
+  <img src="img/keybox-2.jpg" alt="Étape 2">
   <p class="caption">
     <strong>Étape 2 :</strong> Arrivé à l’angle du bâtiment, tournez comme indiqué par la flèche.
   </p>
 
-  <img src="img/keybox-3.jpg" alt="Boîte à clés étape 3">
+  <img src="img/keybox-3.jpg" alt="Étape 3">
   <p class="caption">
     <strong>Étape 3 :</strong> Avancez en direction de l’entrée du parking comme indiqué par la flèche.
   </p>
 
-  <img src="img/keybox-4.jpg" alt="Boîte à clés étape 4">
+  <img src="img/keybox-4.jpg" alt="Étape 4">
   <p class="caption">
     <strong>Étape 4 :</strong> La boîte à clés est accrochée sur le grillage vert, sur la gauche de la route.
   </p>
 
-  <img src="img/keybox-5.jpg" alt="Boîte à clés étape 5">
+  <img src="img/keybox-5.jpg" alt="Étape 5">
   <p class="caption">
     <strong>Étape 5 :</strong> Voici la boîte à clés. Entrez le code qui vous a été communiqué par message pour récupérer les clés.
   </p>
 </section>
 
+<!-- PARKING -->
 <section class="card">
-  <h2>3. Accès parking</h2>
+  <h2><i data-lucide="car"></i> 3. Accès parking</h2>
 
   <img src="img/parking-1.jpg" alt="Parking étape 1">
   <p class="caption">
@@ -142,6 +154,10 @@ img {
 </section>
 
 </main>
+
+<script>
+lucide.createIcons();
+</script>
 
 </body>
 </html>
