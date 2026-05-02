@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swan - Guide</title>
+<title>Swan</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
 body {
@@ -20,9 +22,7 @@ header {
   border-radius:0 0 30px 30px;
 }
 
-.logo {
-  width:130px;
-}
+.logo { width:120px; }
 
 .btn {
   display:block;
@@ -36,6 +36,10 @@ header {
   text-decoration:none;
   font-weight:bold;
 }
+
+.btn i {
+  margin-right:8px;
+}
 </style>
 </head>
 
@@ -43,15 +47,23 @@ header {
 
 <header>
   <img src="img/logo-swan.png" class="logo">
-  
-  <p>17 avenue de Belgique, Vallauris</p>
-  <p>4 eme etages Porte 139</p>
+  <h1>Swan</h1>
+  <p>17 avenue de Belgique</p>
 </header>
 
 <h2>Guide du séjour</h2>
 
-<a href="acces.html" class="btn">🔑 Accès appartement</a>
-<a href="wifi.html" class="btn">📶 WiFi</a>
+<a href="acces.html" class="btn">
+  <i data-lucide="key"></i> Accès appartement
+</a>
+
+<a href="wifi.html" class="btn">
+  <i data-lucide="wifi"></i> WiFi
+</a>
+
+<script>
+lucide.createIcons();
+</script>
 
 </body>
 </html>
