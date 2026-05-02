@@ -1,1 +1,70 @@
-xxx
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiFi - Swan</title>
+
+<style>
+body { font-family:Arial; margin:0; background:#e4f3ff; }
+
+header {
+  background:#0f3557;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.card {
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.value {
+  font-weight:bold;
+  font-size:18px;
+  margin:10px 0;
+}
+
+button {
+  background:#2f80ed;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>WiFi</h1>
+  <a href="index.html" style="color:white;">⬅ Retour</a>
+</header>
+
+<div class="card">
+
+<p>Nom du réseau</p>
+<div class="value">Bbox-AF2149FF</div>
+
+<p>Mot de passe</p>
+<div class="value" id="pwd">4jMA1MPEuexKFxvnLn</div>
+
+<button onclick="copy()">Copier le mot de passe</button>
+
+</div>
+
+<script>
+function copy(){
+  navigator.clipboard.writeText(document.getElementById("pwd").innerText);
+  alert("Mot de passe copié !");
+}
+</script>
+
+</body>
+</html>
