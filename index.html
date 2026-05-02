@@ -3,99 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accès Appartement - Golfe-Juan</title>
+  <title>Accès Appartement - Vallauris</title>
 
   <style>
     :root {
       --blue-dark: #123c69;
       --blue: #2f80ed;
       --blue-light: #dff1ff;
-      --white: #ffffff;
-      --text: #1f2937;
     }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, var(--blue-light), var(--white));
-      color: var(--text);
+      background: linear-gradient(180deg, var(--blue-light), white);
     }
 
     header {
       background: var(--blue-dark);
       color: white;
-      padding: 30px 20px;
+      padding: 30px;
       text-align: center;
       border-radius: 0 0 30px 30px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .lang {
-      margin-top: 15px;
-    }
-
-    .lang button {
-      border: none;
-      background: white;
-      color: var(--blue-dark);
-      padding: 10px 16px;
-      margin: 4px;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
     }
 
     .btn {
       display: inline-block;
       background: var(--blue);
       color: white;
-      text-decoration: none;
       padding: 12px 18px;
       border-radius: 16px;
-      font-weight: bold;
+      text-decoration: none;
       margin-top: 10px;
     }
 
-    main {
-      max-width: 850px;
-      margin: 25px auto;
-      padding: 0 18px;
+    .lang button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
     }
 
     .card {
       background: white;
-      border-radius: 22px;
-      padding: 22px;
-      margin-bottom: 22px;
-      box-shadow: 0 8px 25px rgba(18, 60, 105, 0.12);
-    }
-
-    .card h2 {
-      color: var(--blue-dark);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
     }
 
     .real-photo {
       width: 100%;
-      border-radius: 18px;
-      margin: 15px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      border-radius: 15px;
+      margin: 10px 0;
     }
 
     .caption {
-      background: #f4f9ff;
-      border-left: 4px solid var(--blue);
-      padding: 12px;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      background: #eef6ff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
-    .en {
-      display: none;
-    }
+    .en { display:none; }
   </style>
 </head>
 
@@ -105,99 +73,46 @@
   <h1 class="fr">Accès à l’appartement</h1>
   <h1 class="en">Apartment Access</h1>
 
-  <p>17 boulevard de Belgique, 06220 Golfe-Juan</p>
+  <p>17 avenue de Belgique, 06220 Vallauris</p>
 
-  <!-- GOOGLE MAPS EN HAUT -->
-  <div>
-    <a class="btn" target="_blank"
-       href="https://www.google.com/maps/search/?api=1&query=17+Boulevard+de+Belgique+06220+Golfe-Juan">
-      📍 Google Maps
-    </a>
-  </div>
+  <a class="btn" target="_blank"
+     href="https://www.google.com/maps/search/?api=1&query=17+avenue+de+Belgique+06220+Vallauris">
+    📍 Google Maps
+  </a>
 
   <div class="lang">
-    <button onclick="setLang('fr')">🇫🇷 Français</button>
-    <button onclick="setLang('en')">🇬🇧 English</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
   </div>
 </header>
 
 <main>
 
-<!-- ARRIVEE -->
 <section class="card">
-  <h2 class="fr">1. Arriver à l’appartement</h2>
-  <h2 class="en">1. Arriving at the apartment</h2>
+<h2 class="fr">Arrivée</h2>
+<h2 class="en">Arrival</h2>
 
-  <img src="img/entree.jpg" class="real-photo">
+<img src="img/entree.jpg" class="real-photo">
+<img src="img/entree-badge.jpg" class="real-photo">
+<p class="caption fr">Ouvrez avec le badge</p>
+<p class="caption en">Open with badge</p>
 
-  <img src="img/entree-badge.jpg" class="real-photo">
-  <p class="caption fr"><strong>Accès :</strong> Ouvrez la porte avec le badge.</p>
-  <p class="caption en"><strong>Access:</strong> Open the door using the badge.</p>
+<img src="img/ascenseur.jpg" class="real-photo">
+<p class="caption fr">Prenez l’ascenseur</p>
+<p class="caption en">Take the elevator</p>
 
-  <img src="img/ascenseur.jpg" class="real-photo">
-  <p class="caption fr">Dirigez-vous vers l’ascenseur.</p>
-  <p class="caption en">Go to the elevator.</p>
+<img src="img/porte-appartement.jpg" class="real-photo">
+<p class="caption fr">Sortie : droite puis 1ère porte à gauche n°139</p>
+<p class="caption en">Exit: right then first door left n°139</p>
 
-  <img src="img/porte-appartement.jpg" class="real-photo">
-  <p class="caption fr">En sortant, à droite puis 1ère porte à gauche (n°139).</p>
-  <p class="caption en">Exit, turn right, first door on the left (No.139).</p>
-</section>
-
-<!-- BOITE A CLE -->
-<section class="card">
-  <h2 class="fr">2. Boîte à clés</h2>
-  <h2 class="en">2. Key box</h2>
-
-  <img src="img/keybox-1.jpg" class="real-photo">
-  <p class="caption fr">Étape 1 : Prenez à droite.</p>
-  <p class="caption en">Step 1: Turn right.</p>
-
-  <img src="img/keybox-2.jpg" class="real-photo">
-  <p class="caption fr">Étape 2 : Tournez à l’angle.</p>
-  <p class="caption en">Step 2: Turn at the corner.</p>
-
-  <img src="img/keybox-3.jpg" class="real-photo">
-  <p class="caption fr">Étape 3 : Avancez vers le parking.</p>
-  <p class="caption en">Step 3: Walk toward parking.</p>
-
-  <img src="img/keybox-4.jpg" class="real-photo">
-  <p class="caption fr">Étape 4 : Boîte sur grillage à gauche.</p>
-  <p class="caption en">Step 4: Box on left fence.</p>
-
-  <img src="img/keybox-5.jpg" class="real-photo">
-  <p class="caption fr">Étape 5 : Entrez le code reçu par message.</p>
-  <p class="caption en">Step 5: Enter the code sent by message.</p>
-</section>
-
-<!-- PARKING -->
-<section class="card">
-  <h2 class="fr">3. Accès parking</h2>
-  <h2 class="en">3. Parking access</h2>
-
-  <img src="img/parking-1.jpg" class="real-photo">
-  <p class="caption fr">Étape 1 : À droite puis gauche au bout.</p>
-  <p class="caption en">Step 1: Right then left.</p>
-
-  <img src="img/parking-2.jpg" class="real-photo">
-  <p class="caption fr">Étape 2 : Ouvrez avec le bip.</p>
-  <p class="caption en">Step 2: Open with remote.</p>
-
-  <img src="img/parking-3.jpg" class="real-photo">
-  <p class="caption fr">Étape 3 : Ouvrez avec la petite clé.</p>
-  <p class="caption en">Step 3: Use small key.</p>
 </section>
 
 </main>
 
 <script>
-function setLang(lang) {
-  document.querySelectorAll('.fr').forEach(el => {
-    el.style.display = lang === 'fr' ? 'block' : 'none';
-  });
-
-  document.querySelectorAll('.en').forEach(el => {
-    el.style.display = lang === 'en' ? 'block' : 'none';
-  });
+function setLang(lang){
+ document.querySelectorAll('.fr').forEach(e=>e.style.display=lang==='fr'?'block':'none');
+ document.querySelectorAll('.en').forEach(e=>e.style.display=lang==='en'?'block':'none');
 }
 </script>
 
